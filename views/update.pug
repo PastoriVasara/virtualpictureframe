@@ -1,0 +1,13 @@
+html
+    head
+    link(rel='stylesheet', href='/css/style.css')
+    body
+        div#drop-area
+            form.my-form
+                p Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region
+                input(type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)")
+                label(class="button" for="fileElem") Select some files 
+            progress(id="progressBar" max=100 value=0)
+            div#gallery
+    script(src="/socket.io/socket.io.js")
+    script(type='text/javascript',src='js/entry.js')

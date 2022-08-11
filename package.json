@@ -1,0 +1,20 @@
+{
+  "name": "virtualpictureframe",
+  "version": "1.0.0",
+  "description": "update a picture on a electronical picture frame",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx nodemon server.js"
+  },
+  "keywords": [
+    "picture",
+    "frame"
+  ],
+  "author": "Jussi Rantala",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.1"
+  }
+}
