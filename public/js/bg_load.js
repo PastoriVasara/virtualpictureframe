@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(){
+  document.body.style.backgroundImage = defaultimage;
+});
+
 
   var socket = io();
 

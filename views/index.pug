@@ -1,5 +1,12 @@
+
+
 html
     head
+
     link(rel='stylesheet', href='/css/style.css')
+    script.
+        document.addEventListener("DOMContentLoaded", function(){
+            document.body.style.backgroundImage = "#{defaultimage}";
+        });
     script(src="/socket.io/socket.io.js")
     script(type='text/javascript',src='js/bg_load.js')

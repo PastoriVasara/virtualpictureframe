@@ -3,13 +3,18 @@ const http = require('http');
 const app = express();
 const path = require('path');
 const server = http.createServer(app);
+
 const io = require("socket.io")(server, {
   maxHttpBufferSize: 1e8, pingTimeout: 60000
 });
 
+var defaultImage = "none";
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index',
+  {
+    defaultimage: defaultImage
+  });
 });
 app.get('/update', (req, res) => {
   res.render('update',
@@ -22,6 +27,8 @@ io.on('connection', (socket) => {
   socket.on('updatebg', msg => {
     console.log("Changing Background");
     io.sockets.emit('updatebg', msg);
+    console.log(msg.url);
+    defaultImage = msg.url;
   });
 });
 
