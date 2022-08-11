@@ -18,7 +18,6 @@ function uploadFile(file, i) {
    reader.onloadend = function() {
        formData = {'url':"url(" +reader.result+")"}
        socket.emit('updatebg', formData)
-       console.log("emitted msg");
    }
 }
 
