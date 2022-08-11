@@ -15,14 +15,11 @@ p {
 .my-form {
   margin-bottom: 10px;
 }
-#gallery {
-  margin-top: 10px;
-}
-#gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
+
+#gallery{
+  height: 250px;
+  background: none no-repeat;
+  background-size: 100% 100%;
 }
 .button {
   display: inline-block;

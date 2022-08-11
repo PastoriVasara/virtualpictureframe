@@ -1,12 +1,13 @@
 const express = require('express');
 const http = require('http');
 const app = express();
+const path = require('path');
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   maxHttpBufferSize: 1e8, pingTimeout: 60000
 });
 
-const path = require('path');
+
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -15,16 +16,11 @@ app.get('/update', (req, res) => {
   {
   });
 });
-app.post('/update',(req, res) => {
-  current_image = req.body;
-  console.log(req.body);
-  
-})
 
 io.on('connection', (socket) => {
   console.log("new user")
   socket.on('updatebg', msg => {
-    console.log("sending message");
+    console.log("Changing Background");
     io.sockets.emit('updatebg', msg);
   });
 });
